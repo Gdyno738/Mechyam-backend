@@ -11,20 +11,19 @@ public class CorsConfig {
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
+
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")  // ✅ ALL endpoints include karo
-                        .allowedOrigins(
-                            //"http://localhost:5173",  // Vite dev server
-                          //  "http://localhost:3000",  // Alternative port
-                            //"https://your-frontend.vercel.app"  // Production
-                           "https://mechyam-frontend-2ikueeyfc-likithroshans-projects.vercel.app"
+                registry.addMapping("/**")
+                        .allowedOriginPatterns(
+                                "http://localhost:*",
+                                "https://*.vercel.app",
+                                "https://mechyam-frontend-2ikueeyfc-likithroshans-projects.vercel.app"
                         )
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH")
+                        .allowedMethods("*")
                         .allowedHeaders("*")
                         .exposedHeaders("Authorization")
-                        .allowCredentials(true)
-                        .maxAge(3600);  // ✅ Preflight cache time
+                        .allowCredentials(true);
             }
         };
     }
