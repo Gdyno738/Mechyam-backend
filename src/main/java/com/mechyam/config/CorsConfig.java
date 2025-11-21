@@ -13,12 +13,18 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/mechyam/**")
-                        .allowedOrigins("http://localhost:5173")
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                registry.addMapping("/")  // ✅ ALL endpoints include karo
+                        .allowedOrigins(
+                            "http://localhost:5173",  // Vite dev server
+                            "http://localhost:3000",  // Alternative port
+                            //"https://your-frontend.vercel.app"  // Production
+                           "https://mechyam-frontend-2ikueeyfc-likithroshans-projects.vercel.app"
+                        )
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH")
                         .allowedHeaders("*")
                         .exposedHeaders("Authorization")
-                        .allowCredentials(true);
+                        .allowCredentials(true)
+                        .maxAge(3600);  // ✅ Preflight cache time
             }
         };
     }
