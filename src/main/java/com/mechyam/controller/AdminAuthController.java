@@ -14,7 +14,7 @@ import com.mechyam.util.JwtUtil;
 
 @RestController
 @RequestMapping("/api/admin/auth")
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
 public class AdminAuthController {
 
     @Autowired
