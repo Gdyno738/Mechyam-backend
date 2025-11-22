@@ -15,12 +15,10 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOriginPatterns(
-                        		"https://mechyam-frontend-d5jo.vercel.apphttps://mechyam-frontend-d5jo-ofiythm0s-gdyno738s-projects.vercel.app"
-                        	
-            
+                        .allowedOrigins(
+                                "https://mechyam-frontend-d5jo.vercel.app",   // MAIN PRODUCTION DOMAIN
+                                "http://localhost:5173"                      // LOCAL DEV
                         )
-                       
                         .allowedMethods("*")
                         .allowedHeaders("*")
                         .exposedHeaders("Authorization")
