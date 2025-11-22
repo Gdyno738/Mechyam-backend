@@ -16,7 +16,7 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOriginPatterns(
-                        		"https://mechyam-frontend-d5jo.vercel.app"
+                        		"https://mechyam-frontend-d5jo.vercel.apphttps://mechyam-frontend-d5jo-ofiythm0s-gdyno738s-projects.vercel.app"
                         	
             
                         )
