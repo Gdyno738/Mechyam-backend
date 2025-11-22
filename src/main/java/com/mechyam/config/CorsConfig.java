@@ -16,8 +16,8 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins(
-                                "https://mechyam-frontend-d5jo.vercel.app",   // MAIN PRODUCTION DOMAIN
-                                "http://localhost:5173"                      // LOCAL DEV
+                                "https://mechyam-frontend-d5jo.vercel.app"   // MAIN PRODUCTION DOMAIN
+                                //"http://localhost:5173"                      // LOCAL DEV
                         )
                         .allowedMethods("*")
                         .allowedHeaders("*")
